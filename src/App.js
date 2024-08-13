@@ -31,19 +31,24 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Countdown Timer</h1>
+      <h1>카운트다운 타이머</h1>
       <input
         type="datetime-local"
         value={inputTime}
         onChange={handleInputChange}
       />
-      <button onClick={calculateTimeLeft}>Calculate Time Left</button>
+      <button onClick={calculateTimeLeft}>남은 시간 계산하기</button>
       <div>
         {timeLeft && (
           <p>
             오빠 기다려야 되는 시간은: <strong>{timeLeft}</strong> 남았습니다!
           </p>
         )}
+      </div>
+      <div className="hearts-container">
+        {[...Array(10)].map((_, index) => (
+          <div key={index} className={`heart heart-${index + 1}`}></div>
+        ))}
       </div>
     </div>
   );

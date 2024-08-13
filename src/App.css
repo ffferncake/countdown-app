@@ -1,38 +1,169 @@
+@font-face {
+  font-family: "Ownglyph_UNZ-Rg";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/Ownglyph_UNZ-Rg.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Ownglyph_UNZ-Rg", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background-color: #f0f8ff;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+input {
+  font-family: "Ownglyph_UNZ-Rg", sans-serif;
+  font-size: 28px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  font-family: "Ownglyph_UNZ-Rg", sans-serif;
+  font-size: 28px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 28px;
+  margin-top: 20px;
+}
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  transform: rotate(45deg);
+  animation: float 15s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -25px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -25px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
   }
+}
+
+/* Different colors and positions for each heart */
+.heart-1 {
+  background-color: #ff6b6b;
+  animation-delay: 0s;
+  top: 10%;
+  left: 10%;
+}
+
+.heart-2 {
+  background-color: #ffcc5c;
+  animation-delay: 2s;
+  top: 20%;
+  left: 70%;
+}
+
+.heart-3 {
+  background-color: #c9c9ff;
+  animation-delay: 4s;
+  top: 30%;
+  left: 20%;
+}
+
+.heart-4 {
+  background-color: #88e1f2;
+  animation-delay: 6s;
+  top: 40%;
+  left: 80%;
+}
+
+.heart-5 {
+  background-color: #f96da0;
+  animation-delay: 8s;
+  top: 50%;
+  left: 50%;
+}
+
+.heart-6 {
+  background-color: #ffab73;
+  animation-delay: 10s;
+  top: 60%;
+  left: 30%;
+}
+
+.heart-7 {
+  background-color: #b2ff66;
+  animation-delay: 12s;
+  top: 70%;
+  left: 60%;
+}
+
+.heart-8 {
+  background-color: #9d76ff;
+  animation-delay: 14s;
+  top: 80%;
+  left: 40%;
+}
+
+.heart-9 {
+  background-color: #ffb3b3;
+  animation-delay: 16s;
+  top: 90%;
+  left: 10%;
+}
+
+.heart-10 {
+  background-color: #ff61a6;
+  animation-delay: 18s;
+  top: 10%;
+  left: 90%;
 }
