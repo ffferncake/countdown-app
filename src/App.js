@@ -55,7 +55,8 @@ function App() {
   };
 
   const moveModal = () => {
-    if (moveCount < 4) {
+    if (moveCount < 5) {
+      // Updated to 5 because 0-based index
       const modalWidth = 300; // Adjust this to match your modal's actual width
       const modalHeight = 200; // Adjust this to match your modal's actual height
       const screenWidth = window.innerWidth;
@@ -75,11 +76,8 @@ function App() {
       setModalText(modalMessages[moveCount]); // Update the text based on move count
       setMoveCount(moveCount + 1);
     } else {
-      setModalText(modalMessages[moveCount]); // Final message
-      setTimeout(() => {
-        setShowModal(false);
-        setMoveCount(0);
-      }, 1000); // Close after a brief delay to show the last message
+      setShowModal(false); // Immediately close the modal
+      setMoveCount(0); // Reset move count
     }
   };
 
