@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
   const [inputTime, setInputTime] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    if (!inputTime) return;
+
+    const interval = setInterval(() => {
+      calculateTimeLeft();
+    }, 1000);
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, [inputTime]);
 
   const handleInputChange = (event) => {
     setInputTime(event.target.value);
@@ -37,7 +47,6 @@ function App() {
         value={inputTime}
         onChange={handleInputChange}
       />
-      <button onClick={calculateTimeLeft}>남은 시간 계산하기</button>
       <div>
         {timeLeft && (
           <p>
