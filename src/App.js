@@ -4,6 +4,21 @@ import "./App.css";
 function App() {
   const [inputTime, setInputTime] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [modalPosition, setModalPosition] = useState({
+    top: "40%",
+    left: "40%",
+  });
+  const [moveCount, setMoveCount] = useState(0);
+  const [modalText, setModalText] = useState("오늘");
+
+  const modalMessages = [
+    "시간이 왜 이렇게 느려!!",
+    "닫지마! 더 할말 있어",
+    "서울 당장 오라구!!",
+    "더 있어!",
+    "비와! 당장 출발하라구 나 젖으면 안 돼!",
+  ];
 
   const calculateTimeLeft = useCallback(() => {
     const currentTime = new Date();
@@ -39,6 +54,39 @@ function App() {
     setInputTime(event.target.value);
   };
 
+  const moveModal = () => {
+    if (moveCount < 4) {
+      const modalWidth = 300; // Adjust this to match your modal's actual width
+      const modalHeight = 200; // Adjust this to match your modal's actual height
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      const maxTop = screenHeight - modalHeight - 20; // 20px padding
+      const maxLeft = screenWidth - modalWidth - 20; // 20px padding
+
+      const newTop = `${Math.floor(
+        Math.random() * (maxTop / screenHeight) * 100
+      )}%`;
+      const newLeft = `${Math.floor(
+        Math.random() * (maxLeft / screenWidth) * 100
+      )}%`;
+
+      setModalPosition({ top: newTop, left: newLeft });
+      setModalText(modalMessages[moveCount]); // Update the text based on move count
+      setMoveCount(moveCount + 1);
+    } else {
+      setModalText(modalMessages[moveCount]); // Final message
+      setTimeout(() => {
+        setShowModal(false);
+        setMoveCount(0);
+      }, 1000); // Close after a brief delay to show the last message
+    }
+  };
+
+  const handleCloseModal = () => {
+    moveModal();
+  };
+
   return (
     <div className="App">
       <h1>카운트다운 타이머</h1>
@@ -59,6 +107,25 @@ function App() {
           <div key={index} className={`heart heart-${index + 1}`}></div>
         ))}
       </div>
+
+      <button onClick={() => setShowModal(true)}>오늘 내가 하고싶은 말</button>
+
+      {showModal && (
+        <div
+          className="modal"
+          style={{
+            top: modalPosition.top,
+            left: modalPosition.left,
+          }}
+        >
+          <button onClick={handleCloseModal} className="closeModal">
+            &times;
+          </button>
+          <div style={{ textAlign: "center", marginTop: "50px" }}>
+            {modalText}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
