@@ -1,25 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./App.css";
 
 function App() {
   const [inputTime, setInputTime] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
 
-  useEffect(() => {
-    if (!inputTime) return;
-
-    const interval = setInterval(() => {
-      calculateTimeLeft();
-    }, 1000);
-
-    return () => clearInterval(interval); // Clear interval on component unmount
-  }, [inputTime]);
-
-  const handleInputChange = (event) => {
-    setInputTime(event.target.value);
-  };
-
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const currentTime = new Date();
     const targetTime = new Date(inputTime);
 
@@ -37,6 +23,20 @@ function App() {
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
     setTimeLeft(`${hours}h ${minutes}m ${seconds}s`);
+  }, [inputTime]);
+
+  useEffect(() => {
+    if (!inputTime) return;
+
+    const interval = setInterval(() => {
+      calculateTimeLeft();
+    }, 1000);
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, [inputTime, calculateTimeLeft]);
+
+  const handleInputChange = (event) => {
+    setInputTime(event.target.value);
   };
 
   return (
