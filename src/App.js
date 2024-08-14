@@ -13,13 +13,14 @@ function App() {
   const [modalText, setModalText] = useState("오늘");
 
   const modalMessages = [
-    "시간이 왜 이렇게 느려!!",
-    "닫지마! 더 할말 있어",
-    "서울 당장 오라구!!",
-    "더 있어!",
-    "비와! 당장 출발하라구 나 젖으면 안 돼!",
+    "오빠가",
+    "바쁘니까",
+    "힘내구",
+    "화이팅!!!",
+    "저녁도 잘 놀구!!",
   ];
 
+  ////////////// count time left //////////////
   const calculateTimeLeft = useCallback(() => {
     const currentTime = new Date();
     const targetTime = new Date(inputTime);
@@ -85,6 +86,40 @@ function App() {
     moveModal();
   };
 
+  ////////////// count time pass (만난지) //////////////
+  const [timePassed, setTimePassed] = useState("");
+
+  const calculateTimePassed = useCallback(() => {
+    const currentTime = new Date();
+    const startTime = new Date("2024-06-29T00:00:00");
+
+    const timeDifference = currentTime - startTime;
+
+    if (timeDifference <= 0) {
+      setTimePassed("선택한 날짜가 미래입니다!");
+      return;
+    }
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    setTimePassed(`${days}일 ${hours}시간 ${minutes}분 ${seconds}초`);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      calculateTimePassed();
+    }, 1000);
+
+    return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 해제
+  }, [calculateTimePassed]);
+
   return (
     <div className="App">
       <h1>카운트다운 타이머</h1>
@@ -124,6 +159,10 @@ function App() {
           </div>
         </div>
       )}
+      <div className="time-container">
+        <p className="time-heading">♥ ♡ 2024년 6월 29일부터 지난 시간 : </p>
+        {timePassed && <p className="time-text"><strong>{timePassed}</strong>♡ ♥ </p>}
+      </div>
     </div>
   );
 }
