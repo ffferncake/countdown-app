@@ -4,7 +4,8 @@ import "./App.css";
 function App() {
   const [inputTime, setInputTime] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
-  const [progress, setProgress] = useState(50); // Set an initial value, say 50%
+  // const [progress, setProgress] = useState(50); // Set an initial value, say 50%
+  const [progress] = useState(50); // Set an initial value, say 50%
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({
     top: "20%",
@@ -55,37 +56,37 @@ function App() {
     moveModal();
   };
 
-    ////////////// count time left //////////////
-    const calculateTimeLeft = useCallback(() => {
-      const currentTime = new Date();
-      const targetTime = new Date(inputTime);
-  
-      const timeDifference = targetTime - currentTime;
-  
-      if (timeDifference <= 0) {
-        setTimeLeft("The selected time is in the past!");
-        return;
-      }
-  
-      const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-      const minutes = Math.floor(
-        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-  
-      setTimeLeft(`${hours}h ${minutes}m ${seconds}s`);
-    }, [inputTime]);
-  
-    useEffect(() => {
-      if (!inputTime) return;
-  
-      const interval = setInterval(() => {
-        calculateTimeLeft();
-      }, 1000);
-  
-      return () => clearInterval(interval); // Clear interval on component unmount
-    }, [inputTime, calculateTimeLeft]);
-  
+  ////////////// count time left //////////////
+  const calculateTimeLeft = useCallback(() => {
+    const currentTime = new Date();
+    const targetTime = new Date(inputTime);
+
+    const timeDifference = targetTime - currentTime;
+
+    if (timeDifference <= 0) {
+      setTimeLeft("The selected time is in the past!");
+      return;
+    }
+
+    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+    const minutes = Math.floor(
+      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    setTimeLeft(`${hours}h ${minutes}m ${seconds}s`);
+  }, [inputTime]);
+
+  useEffect(() => {
+    if (!inputTime) return;
+
+    const interval = setInterval(() => {
+      calculateTimeLeft();
+    }, 1000);
+
+    return () => clearInterval(interval); // Clear interval on component unmount
+  }, [inputTime, calculateTimeLeft]);
+
   ////////////// count time pass (만난지) //////////////
   const [timePassed, setTimePassed] = useState("");
 
@@ -119,6 +120,11 @@ function App() {
 
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 해제
   }, [calculateTimePassed]);
+
+  // const handleProgressChange = (event) => {
+  //   const newProgress = parseFloat(event.target.value);
+  //   setProgress(newProgress);
+  // };
 
   return (
     <div className="App">
