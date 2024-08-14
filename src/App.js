@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import "./App.css";
 
 function App() {
   const [inputTime, setInputTime] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
+  const [progress, setProgress] = useState(50); // Set an initial value, say 50%
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({
     top: "20%",
@@ -20,51 +21,19 @@ function App() {
     "저녁도 잘 놀구!!",
   ];
 
-  ////////////// count time left //////////////
-  const calculateTimeLeft = useCallback(() => {
-    const currentTime = new Date();
-    const targetTime = new Date(inputTime);
-
-    const timeDifference = targetTime - currentTime;
-
-    if (timeDifference <= 0) {
-      setTimeLeft("The selected time is in the past!");
-      return;
-    }
-
-    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-    const minutes = Math.floor(
-      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-    );
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-    setTimeLeft(`${hours}h ${minutes}m ${seconds}s`);
-  }, [inputTime]);
-
-  useEffect(() => {
-    if (!inputTime) return;
-
-    const interval = setInterval(() => {
-      calculateTimeLeft();
-    }, 1000);
-
-    return () => clearInterval(interval); // Clear interval on component unmount
-  }, [inputTime, calculateTimeLeft]);
-
   const handleInputChange = (event) => {
     setInputTime(event.target.value);
   };
 
   const moveModal = () => {
     if (moveCount < 5) {
-      // Updated to 5 because 0-based index
-      const modalWidth = 300; // Adjust this to match your modal's actual width
-      const modalHeight = 200; // Adjust this to match your modal's actual height
+      const modalWidth = 300;
+      const modalHeight = 200;
       const screenWidth = window.innerWidth;
       const screenHeight = window.innerHeight;
 
-      const maxTop = screenHeight - modalHeight - 20; // 20px padding
-      const maxLeft = screenWidth - modalWidth - 20; // 20px padding
+      const maxTop = screenHeight - modalHeight - 20;
+      const maxLeft = screenWidth - modalWidth - 20;
 
       const newTop = `${Math.floor(
         Math.random() * (maxTop / screenHeight) * 100
@@ -74,11 +43,11 @@ function App() {
       )}%`;
 
       setModalPosition({ top: newTop, left: newLeft });
-      setModalText(modalMessages[moveCount]); // Update the text based on move count
+      setModalText(modalMessages[moveCount]);
       setMoveCount(moveCount + 1);
     } else {
-      setShowModal(false); // Immediately close the modal
-      setMoveCount(0); // Reset move count
+      setShowModal(false);
+      setMoveCount(0);
     }
   };
 
@@ -86,6 +55,37 @@ function App() {
     moveModal();
   };
 
+    ////////////// count time left //////////////
+    const calculateTimeLeft = useCallback(() => {
+      const currentTime = new Date();
+      const targetTime = new Date(inputTime);
+  
+      const timeDifference = targetTime - currentTime;
+  
+      if (timeDifference <= 0) {
+        setTimeLeft("The selected time is in the past!");
+        return;
+      }
+  
+      const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+      const minutes = Math.floor(
+        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+  
+      setTimeLeft(`${hours}h ${minutes}m ${seconds}s`);
+    }, [inputTime]);
+  
+    useEffect(() => {
+      if (!inputTime) return;
+  
+      const interval = setInterval(() => {
+        calculateTimeLeft();
+      }, 1000);
+  
+      return () => clearInterval(interval); // Clear interval on component unmount
+    }, [inputTime, calculateTimeLeft]);
+  
   ////////////// count time pass (만난지) //////////////
   const [timePassed, setTimePassed] = useState("");
 
@@ -161,7 +161,34 @@ function App() {
       )}
       <div className="time-container">
         <p className="time-heading">♥ ♡ 2024년 6월 29일부터 지난 시간 : </p>
-        {timePassed && <p className="time-text"><strong>{timePassed}</strong>♡ ♥ </p>}
+        {timePassed && (
+          <p className="time-text">
+            <strong>{timePassed}</strong>♡ ♥
+          </p>
+        )}
+      </div>
+      {/* <div className="progress-input-container">
+        <label>
+          Set Progress: 
+          <input
+            type="number"
+            value={progress}
+            onChange={handleProgressChange}
+            min="0"
+            max="100"
+          />
+        </label>
+      </div> */}
+
+      <div className="horangi-tab">
+        <span>🐯</span>
+        <div className="progress-tab-container">
+          <div className="progress-tab" style={{ width: `${progress}%` }}>
+            <span className="progress-tab-text">{`${Math.round(
+              progress
+            )}%`}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
