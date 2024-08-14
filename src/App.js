@@ -6,8 +6,8 @@ function App() {
   const [timeLeft, setTimeLeft] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({
-    top: "40%",
-    left: "40%",
+    top: "20%",
+    left: "20%",
   });
   const [moveCount, setMoveCount] = useState(0);
   const [modalText, setModalText] = useState("오늘");
@@ -154,7 +154,7 @@ function App() {
           <button onClick={handleCloseModal} className="closeModal">
             &times;
           </button>
-          <div style={{ textAlign: "center", marginTop: "50px" }}>
+          <div style={{ textAlign: "center", marginTop: "20px" }}>
             {modalText}
           </div>
         </div>

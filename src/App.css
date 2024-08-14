@@ -22,6 +22,8 @@ body {
   align-items: center;
   background-color: #f0f8ff;
   overflow: hidden;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 h1 {
@@ -176,13 +178,13 @@ p {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: "0 0 10px rgba(0, 0, 0, 0.5)";
-  width: 300px;
-  height: 200px;
+  width: 200px;
+  height: 100px;
   cursor: "pointer";
   max-width: "90%";
   max-height: "90%";
   font-size: 35px;
-  transform: translate(-50%, -50%),
+  transform: translate(-50%, -50%);
 }
 
 button {
