@@ -127,75 +127,79 @@ function App() {
   // };
 
   return (
+    // <div className="App">
+    //   <h1>카운트다운 타이머</h1>
+    //   <input
+    //     type="datetime-local"
+    //     value={inputTime}
+    //     onChange={handleInputChange}
+    //   />
+    //   <div>
+    //     {timeLeft && (
+    //       <p>
+    //         오빠 기다려야 되는 시간은: <strong>{timeLeft}</strong> 남았습니다!
+    //       </p>
+    //     )}
+    //   </div>
+    //   <div className="hearts-container">
+    //     {[...Array(10)].map((_, index) => (
+    //       <div key={index} className={`heart heart-${index + 1}`}></div>
+    //     ))}
+    //   </div>
+
+    //   {/* <button onClick={() => setShowModal(true)}>오늘 내가 하고싶은 말</button> */}
+
+    //   {showModal && (
+    //     <div
+    //       className="modal"
+    //       style={{
+    //         top: modalPosition.top,
+    //         left: modalPosition.left,
+    //       }}
+    //     >
+    //       <button onClick={handleCloseModal} className="closeModal">
+    //         &times;
+    //       </button>
+    //       <div style={{ textAlign: "center", marginTop: "20px" }}>
+    //         {modalText}
+    //       </div>
+    //     </div>
+    //   )}
+    //   <div className="time-container">
+    //     <p className="time-heading">♥ ♡ 2024년 6월 29일부터 지난 시간 : </p>
+    //     {timePassed && (
+    //       <p className="time-text">
+    //         <strong>{timePassed}</strong>♡ ♥
+    //       </p>
+    //     )}
+    //   </div>
+    //   {/* <div className="progress-input-container">
+    //     <label>
+    //       Set Progress:
+    //       <input
+    //         type="number"
+    //         value={progress}
+    //         onChange={handleProgressChange}
+    //         min="0"
+    //         max="100"
+    //       />
+    //     </label>
+    //   </div> */}
+
+    //   {/* <div className="horangi-tab">
+    //     <span>🐯</span>
+    //     <div className="progress-tab-container">
+    //       <div className="progress-tab" style={{ width: `${progress}%` }}>
+    //         <span className="progress-tab-text">{`${Math.round(
+    //           progress
+    //         )}%`}</span>
+    //       </div>
+    //     </div>
+    //   </div> */}
+    // </div>
     <div className="App">
-      <h1>카운트다운 타이머</h1>
-      <input
-        type="datetime-local"
-        value={inputTime}
-        onChange={handleInputChange}
-      />
-      <div>
-        {timeLeft && (
-          <p>
-            오빠 기다려야 되는 시간은: <strong>{timeLeft}</strong> 남았습니다!
-          </p>
-        )}
-      </div>
-      <div className="hearts-container">
-        {[...Array(10)].map((_, index) => (
-          <div key={index} className={`heart heart-${index + 1}`}></div>
-        ))}
-      </div>
-
-      <button onClick={() => setShowModal(true)}>오늘 내가 하고싶은 말</button>
-
-      {showModal && (
-        <div
-          className="modal"
-          style={{
-            top: modalPosition.top,
-            left: modalPosition.left,
-          }}
-        >
-          <button onClick={handleCloseModal} className="closeModal">
-            &times;
-          </button>
-          <div style={{ textAlign: "center", marginTop: "20px" }}>
-            {modalText}
-          </div>
-        </div>
-      )}
-      <div className="time-container">
-        <p className="time-heading">♥ ♡ 2024년 6월 29일부터 지난 시간 : </p>
-        {timePassed && (
-          <p className="time-text">
-            <strong>{timePassed}</strong>♡ ♥
-          </p>
-        )}
-      </div>
-      {/* <div className="progress-input-container">
-        <label>
-          Set Progress: 
-          <input
-            type="number"
-            value={progress}
-            onChange={handleProgressChange}
-            min="0"
-            max="100"
-          />
-        </label>
-      </div> */}
-
-      <div className="horangi-tab">
-        <span>🐯</span>
-        <div className="progress-tab-container">
-          <div className="progress-tab" style={{ width: `${progress}%` }}>
-            <span className="progress-tab-text">{`${Math.round(
-              progress
-            )}%`}</span>
-          </div>
-        </div>
-      </div>
+      <h1>서비스 종료</h1>
+      <h3>이번주 나랑 같이 보낼 시간 (거의) 없음</h3>
     </div>
   );
 }
