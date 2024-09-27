@@ -2,124 +2,124 @@ import React, { useState, useCallback, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [inputTime, setInputTime] = useState("");
-  const [timeLeft, setTimeLeft] = useState("");
-  // const [progress, setProgress] = useState(50); // Set an initial value, say 50%
-  const [progress] = useState(100); // Set an initial value, say 50%
-  const [showModal, setShowModal] = useState(false);
-  const [modalPosition, setModalPosition] = useState({
-    top: "20%",
-    left: "20%",
-  });
-  const [moveCount, setMoveCount] = useState(0);
-  const [modalText, setModalText] = useState("오늘");
+  // const [inputTime, setInputTime] = useState("");
+  // const [timeLeft, setTimeLeft] = useState("");
+  // // const [progress, setProgress] = useState(50); // Set an initial value, say 50%
+  // const [progress] = useState(100); // Set an initial value, say 50%
+  // const [showModal, setShowModal] = useState(false);
+  // const [modalPosition, setModalPosition] = useState({
+  //   top: "20%",
+  //   left: "20%",
+  // });
+  // const [moveCount, setMoveCount] = useState(0);
+  // const [modalText, setModalText] = useState("오늘");
 
-  const modalMessages = [
-    "오빠가",
-    "바쁘니까",
-    "힘내구",
-    "화이팅!!!",
-    "저녁도 잘 놀구!!",
-  ];
+  // const modalMessages = [
+  //   "오빠가",
+  //   "바쁘니까",
+  //   "힘내구",
+  //   "화이팅!!!",
+  //   "저녁도 잘 놀구!!",
+  // ];
 
-  const handleInputChange = (event) => {
-    setInputTime(event.target.value);
-  };
+  // const handleInputChange = (event) => {
+  //   setInputTime(event.target.value);
+  // };
 
-  const moveModal = () => {
-    if (moveCount < 5) {
-      const modalWidth = 300;
-      const modalHeight = 200;
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
+  // const moveModal = () => {
+  //   if (moveCount < 5) {
+  //     const modalWidth = 300;
+  //     const modalHeight = 200;
+  //     const screenWidth = window.innerWidth;
+  //     const screenHeight = window.innerHeight;
 
-      const maxTop = screenHeight - modalHeight - 20;
-      const maxLeft = screenWidth - modalWidth - 20;
+  //     const maxTop = screenHeight - modalHeight - 20;
+  //     const maxLeft = screenWidth - modalWidth - 20;
 
-      const newTop = `${Math.floor(
-        Math.random() * (maxTop / screenHeight) * 100
-      )}%`;
-      const newLeft = `${Math.floor(
-        Math.random() * (maxLeft / screenWidth) * 100
-      )}%`;
+  //     const newTop = `${Math.floor(
+  //       Math.random() * (maxTop / screenHeight) * 100
+  //     )}%`;
+  //     const newLeft = `${Math.floor(
+  //       Math.random() * (maxLeft / screenWidth) * 100
+  //     )}%`;
 
-      setModalPosition({ top: newTop, left: newLeft });
-      setModalText(modalMessages[moveCount]);
-      setMoveCount(moveCount + 1);
-    } else {
-      setShowModal(false);
-      setMoveCount(0);
-    }
-  };
+  //     setModalPosition({ top: newTop, left: newLeft });
+  //     setModalText(modalMessages[moveCount]);
+  //     setMoveCount(moveCount + 1);
+  //   } else {
+  //     setShowModal(false);
+  //     setMoveCount(0);
+  //   }
+  // };
 
-  const handleCloseModal = () => {
-    moveModal();
-  };
+  // const handleCloseModal = () => {
+  //   moveModal();
+  // };
 
-  ////////////// count time left //////////////
-  const calculateTimeLeft = useCallback(() => {
-    const currentTime = new Date();
-    const targetTime = new Date(inputTime);
+  // ////////////// count time left //////////////
+  // const calculateTimeLeft = useCallback(() => {
+  //   const currentTime = new Date();
+  //   const targetTime = new Date(inputTime);
 
-    const timeDifference = targetTime - currentTime;
+  //   const timeDifference = targetTime - currentTime;
 
-    if (timeDifference <= 0) {
-      setTimeLeft("The selected time is in the past!");
-      return;
-    }
+  //   if (timeDifference <= 0) {
+  //     setTimeLeft("The selected time is in the past!");
+  //     return;
+  //   }
 
-    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-    const minutes = Math.floor(
-      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-    );
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+  //   const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+  //   const minutes = Math.floor(
+  //     (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+  //   );
+  //   const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    setTimeLeft(`${hours}h ${minutes}m ${seconds}s`);
-  }, [inputTime]);
+  //   setTimeLeft(`${hours}h ${minutes}m ${seconds}s`);
+  // }, [inputTime]);
 
-  useEffect(() => {
-    if (!inputTime) return;
+  // useEffect(() => {
+  //   if (!inputTime) return;
 
-    const interval = setInterval(() => {
-      calculateTimeLeft();
-    }, 1000);
+  //   const interval = setInterval(() => {
+  //     calculateTimeLeft();
+  //   }, 1000);
 
-    return () => clearInterval(interval); // Clear interval on component unmount
-  }, [inputTime, calculateTimeLeft]);
+  //   return () => clearInterval(interval); // Clear interval on component unmount
+  // }, [inputTime, calculateTimeLeft]);
 
-  ////////////// count time pass (만난지) //////////////
-  const [timePassed, setTimePassed] = useState("");
+  // ////////////// count time pass (만난지) //////////////
+  // const [timePassed, setTimePassed] = useState("");
 
-  const calculateTimePassed = useCallback(() => {
-    const currentTime = new Date();
-    const startTime = new Date("2024-06-29T00:00:00");
+  // const calculateTimePassed = useCallback(() => {
+  //   const currentTime = new Date();
+  //   const startTime = new Date("2024-06-29T00:00:00");
 
-    const timeDifference = currentTime - startTime;
+  //   const timeDifference = currentTime - startTime;
 
-    if (timeDifference <= 0) {
-      setTimePassed("선택한 날짜가 미래입니다!");
-      return;
-    }
+  //   if (timeDifference <= 0) {
+  //     setTimePassed("선택한 날짜가 미래입니다!");
+  //     return;
+  //   }
 
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor(
-      (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-    );
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+  //   const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  //   const hours = Math.floor(
+  //     (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  //   );
+  //   const minutes = Math.floor(
+  //     (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+  //   );
+  //   const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    setTimePassed(`${days}일 ${hours}시간 ${minutes}분 ${seconds}초`);
-  }, []);
+  //   setTimePassed(`${days}일 ${hours}시간 ${minutes}분 ${seconds}초`);
+  // }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      calculateTimePassed();
-    }, 1000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     calculateTimePassed();
+  //   }, 1000);
 
-    return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 해제
-  }, [calculateTimePassed]);
+  //   return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 해제
+  // }, [calculateTimePassed]);
 
   // const handleProgressChange = (event) => {
   //   const newProgress = parseFloat(event.target.value);
