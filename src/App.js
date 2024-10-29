@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [inputTime, setInputTime] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
-  const [progress, setProgress] = useState(50); // Set an initial value, say 50%
+  // const [progress, setProgress] = useState(50); // Set an initial value, say 50%
   // const [progress] = useState(100); // Set an initial value, say 50%
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({
@@ -121,10 +121,10 @@ function App() {
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 해제
   }, [calculateTimePassed]);
 
-  const handleProgressChange = (event) => {
-    const newProgress = parseFloat(event.target.value);
-    setProgress(newProgress);
-  };
+  // const handleProgressChange = (event) => {
+  //   const newProgress = parseFloat(event.target.value);
+  //   setProgress(newProgress);
+  // };
 
   return (
     <div className="App">
