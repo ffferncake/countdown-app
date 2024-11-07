@@ -4,8 +4,6 @@ import "./App.css";
 function App() {
   const [inputTime, setInputTime] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
-  // const [progress, setProgress] = useState(50); // Set an initial value, say 50%
-  // const [progress] = useState(100); // Set an initial value, say 50%
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({
     top: "20%",
@@ -121,11 +119,6 @@ function App() {
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 해제
   }, [calculateTimePassed]);
 
-  // const handleProgressChange = (event) => {
-  //   const newProgress = parseFloat(event.target.value);
-  //   setProgress(newProgress);
-  // };
-
   return (
     <div className="App">
       <h1>카운트다운 타이머</h1>
@@ -197,10 +190,6 @@ function App() {
         </div>
       </div> */}
     </div>
-    // <div className="App">
-    //   <h1>서비스 종료</h1>
-    //   <h3>이번주 나랑 같이 보낼 시간 (거의) 없음</h3>
-    // </div>
   );
 }
 

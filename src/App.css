@@ -1,13 +1,18 @@
-@font-face {
+/* @font-face {
   font-family: "Ownglyph_UNZ-Rg";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/Ownglyph_UNZ-Rg.woff2")
     format("woff2");
   font-weight: normal;
   font-style: normal;
+} */
+@font-face {
+  font-family: "1HoonRolyPoly"; /*Can be any text*/
+  src: local("1HoonRolyPoly"),
+    url("./fonts/1HoonRolyPoly.ttf") format("truetype");
 }
 
 body {
-  font-family: "Ownglyph_UNZ-Rg", sans-serif;
+  font-family: "1HoonRolyPoly", sans-serif;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -32,14 +37,14 @@ h1 {
 }
 
 input {
-  font-family: "Ownglyph_UNZ-Rg", sans-serif;
+  font-family: "1HoonRolyPoly", sans-serif;
   font-size: 28px;
   padding: 10px;
   margin: 10px 0;
 }
 
 button {
-  font-family: "Ownglyph_UNZ-Rg", sans-serif;
+  font-family: "1HoonRolyPoly", sans-serif;
   font-size: 28px;
   padding: 10px 20px;
   margin-top: 0px;
@@ -221,39 +226,13 @@ button:focus {
   display: inline-block;
 }
 
-.progress-tab-container {
+.progress-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.time-progress {
   width: 80%;
-  height: 30px;
-  background-color: #ddd;
-  border-radius: 15px;
-  overflow: hidden;
-  position: relative;
-  margin: 20px 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.progress-tab {
-  position: relative;
-  height: 100%;
-  background-color: #a93234;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: width 1s ease-in-out;
-}
-
-.progress-tab-text {
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  white-space: nowrap;
-  /* transform: translate(-50%, -50%); */
-}
-
-.horangi-tab{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: 80%;
+  height: 20px;
+  margin-top: 5px;
 }
