@@ -16,6 +16,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   overflow-y: auto;
+  background-color: #f0f8ff;
 }
 
 .App {
@@ -26,7 +27,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f0f8ff;
   overflow: hidden;
   padding-left: 25px;
   padding-right: 25px;
@@ -46,11 +46,10 @@ input {
 
 button {
   font-family: "1HoonRolyPoly", sans-serif;
-  font-size: 28px;
   padding: 10px 20px;
   margin-top: 0px;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 1;
 }
 
 .hearts-container {
@@ -287,4 +286,12 @@ button:focus {
 .score-wrap {
   display: flex;
   align-items: center;
+}
+
+.scorePageBtn{
+  font-size: 15px;
+  background-color:darkgrey;
+  color: #f0f8ff;
+  border-radius: 4px;
+  border-color: transparent;
 }

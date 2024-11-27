@@ -1,0 +1,88 @@
+/* ScoreCriteria.css */
+
+.score-criteria-container {
+  padding: 50px;
+}
+
+.score-criteria-title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.score-criteria-table {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+}
+
+.score-criteria-row {
+  display: flex;
+  align-items: center;
+}
+
+.score-criteria-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.score-criteria-text {
+  flex: 1;
+  padding-left: 10px;
+  border-left: 2px solid #ddd;
+}
+
+.score-criteria-score {
+  font-weight: bold;
+  color: hsl(0, 0%, 0%);
+}
+
+.score-criteria-desc {
+  color: darkred;
+}
+
+.score-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.positive-scores {
+  /* width: 50%; */
+  padding: 20px;
+  background-color: #e0ffe0; /* Light green for positive scores */
+}
+
+.negative-scores {
+  /* width: 50%; */
+  padding: 20px;
+  background-color: #ffe0e0; /* Light red for negative scores */
+}
+
+.score-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.text {
+  flex: 1;
+}
+
+.score {
+  font-weight: bold;
+}
+
+.positive {
+  background-color: #c6f6c6; /* Slightly darker green for positive items */
+}
+
+.negative {
+  background-color: #f6c6c6; /* Slightly darker red for negative items */
+}

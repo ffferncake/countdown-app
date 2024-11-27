@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import "./App.css";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const [inputTime, setInputTime] = useState("");
@@ -40,6 +41,11 @@ function App() {
   ❗️🔞 나머지 상황에 따라 +/- 적용 🚫 아님 "RESET" 
   점수기준 만든사람 기분따라서 점수 변경가능합니다. 이상!
   `;
+
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate("/criteria");
+  };
 
   const handleInputChange = (event) => {
     setInputTime(event.target.value);
@@ -151,6 +157,9 @@ function App() {
   return (
     <div className="App">
       <h1>카운트다운 타이머</h1>
+      <button className="scorePageBtn" onClick={handleButtonClick}>
+        점수 기준 상세 보기
+      </button>
       <input
         type="datetime-local"
         value={inputTime}
