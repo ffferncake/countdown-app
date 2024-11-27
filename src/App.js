@@ -11,6 +11,7 @@ function App() {
   });
   const [moveCount, setMoveCount] = useState(0);
   const [modalText, setModalText] = useState("오늘");
+  const [showNotice, setShowNotice] = useState(false);
 
   const modalMessages = [
     "오빠가",
@@ -19,6 +20,26 @@ function App() {
     "화이팅!!!",
     "저녁도 잘 놀구!!",
   ];
+
+  const noticeMessage = `
+  - 🧸 평일날 오면: +500점 (🚗 회사까지 +250점 , 먼저 와서 기다려주기 +100점추가)
+  - 💯 금/토/일 (기본* = 와야되는날): +200점 (🚗 회사까지오면 +100점)
+  - ❤️‍🩹 힘들때/울때/아플때 나타나면: +1000점
+  - 🍴 골뱅이/슬러시 사주기: +500점
+  - 🍻 조개구이 같이 먹으러 가기: +700점
+  - 🎈 선물주면 : +500점
+  - 💘 금/토/일 안오면: -500점
+  - 💘 약속취소하면 (이유없이): -500점
+  - 🤬 말투 띠겁게 느껴지면: -300점
+  - 🐯 삐지게 해주면/카톡 아무말없이 사라지면: -1000점
+  - 😢 서운하게 해주면: -2000점
+  - 💻 30분이상 카톡 읽씹: -500점
+  - 📵 술 먹을 때 전화/카톡 잘 안 하면 (1시간 넘게 답장/응답 없으면): -2000점
+  - 🤷‍♀️ 술 먹을 때 옆에 여자가 있으면: -500점
+  - 🆘 마지막 바람피면: ✂️
+  ❗️🔞 나머지 상황에 따라 +/- 적용 🚫 아님 "RESET" 
+  점수기준 만든사람 기분따라서 점수 병경가능합니다. 이상!
+  `;
 
   const handleInputChange = (event) => {
     setInputTime(event.target.value);
@@ -119,6 +140,14 @@ function App() {
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 해제
   }, [calculateTimePassed]);
 
+  useEffect(() => {
+    // Show the notice modal automatically after 1 second
+    const timer = setTimeout(() => {
+      setShowNotice(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="App">
       <h1>카운트다운 타이머</h1>
@@ -158,6 +187,34 @@ function App() {
           </div>
         </div>
       )}
+      {/* Notice Modal */}
+      {showNotice && (
+        <div className="notice-modal">
+          <div className="notice-modal-wrap">
+            <div className="notice-content">
+              <p className="notice-title">공지 사항 : 점수 기준 (2024.11.27 기준)</p>
+              {noticeMessage.split("\n").map((line, index) => {
+                const [boldText, regularText] = line.split(":");
+                return (
+                  <p className="notice-desc" key={index}>
+                    <strong>{boldText.trim()}</strong>
+                    {regularText ? `: ${regularText.trim()}` : ""}
+                  </p>
+                );
+              })}
+              <p className="notice-sub-desc"> 🎀 1만: 내가 학교앞에 찾으러 가기 🎫 1.5만:소원 쿠픈 (🍕 먹고싶은거, 📍가고싶은데 등등) 🧗‍♂️ 2만점: 등산 쿠픈</p>
+              <p className="notice-sub-desc"><strong>점수 마이너스 상태 3주이상 되어있으면 🚫 RESET 적용합니다!</strong></p>
+            </div>
+            <button
+              className="notice-close-btn"
+              onClick={() => setShowNotice(false)}
+            >
+              X
+            </button>
+          </div>
+        </div>
+      )}
+
       <div className="time-container">
         <p className="time-heading">♥ ♡ 2024년 6월 29일부터 지난 시간 : </p>
         {timePassed && (
