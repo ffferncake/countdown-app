@@ -53,10 +53,6 @@ button {
   z-index: 9999;
 }
 
-p {
-  /* font-size: 28px; */
-  margin-top: 20px;
-}
 .hearts-container {
   position: absolute;
   top: 0;
@@ -219,6 +215,7 @@ button:focus {
   align-items: center;
 }
 
+.score-heading,
 .time-heading {
   margin-right: 10px; /* Space between the heading and the text */
 }
@@ -280,4 +277,14 @@ button:focus {
   font-size: 15px;
   color: #ff6b6b;
   font-weight: 600;
+}
+
+.score-date {
+  font-size: 13px;
+  color: #ff6b6b;
+}
+
+.score-wrap {
+  display: flex;
+  align-items: center;
 }

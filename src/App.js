@@ -38,7 +38,7 @@ function App() {
   - 🤷‍♀️ 술 먹을 때 옆에 여자가 있으면: -500점
   - 🆘 마지막 바람피면: ✂️
   ❗️🔞 나머지 상황에 따라 +/- 적용 🚫 아님 "RESET" 
-  점수기준 만든사람 기분따라서 점수 병경가능합니다. 이상!
+  점수기준 만든사람 기분따라서 점수 변경가능합니다. 이상!
   `;
 
   const handleInputChange = (event) => {
@@ -192,7 +192,9 @@ function App() {
         <div className="notice-modal">
           <div className="notice-modal-wrap">
             <div className="notice-content">
-              <p className="notice-title">공지 사항 : 점수 기준 (2024.11.27 기준)</p>
+              <p className="notice-title">
+                공지 사항 : 점수 기준 (2024.11.27 기준)
+              </p>
               {noticeMessage.split("\n").map((line, index) => {
                 const [boldText, regularText] = line.split(":");
                 return (
@@ -202,8 +204,16 @@ function App() {
                   </p>
                 );
               })}
-              <p className="notice-sub-desc"> 🎀 1만: 내가 학교앞에 찾으러 가기 🎫 1.5만:소원 쿠픈 (🍕 먹고싶은거, 📍가고싶은데 등등) 🧗‍♂️ 2만점: 등산 쿠픈</p>
-              <p className="notice-sub-desc"><strong>점수 마이너스 상태 3주이상 되어있으면 🚫 RESET 적용합니다!</strong></p>
+              <p className="notice-sub-desc">
+                {" "}
+                🎀 1만: 내가 학교앞에 찾으러 가기 🎫 1.5만:소원 쿠픈 (🍕
+                먹고싶은거, 📍가고싶은데 등등) 🧗‍♂️ 2만점: 등산 쿠픈
+              </p>
+              <p className="notice-sub-desc">
+                <strong>
+                  점수 마이너스 상태 3주이상 되어있으면 🚫 RESET 적용합니다!
+                </strong>
+              </p>
             </div>
             <button
               className="notice-close-btn"
@@ -222,6 +232,10 @@ function App() {
             <strong>{timePassed}</strong>♡ ♥
           </p>
         )}
+      </div>
+      <div className="score-wrap">
+        <p className="score-heading">현재 점수 : 0점</p>
+        <p className="score-date">updated : 2024.11.27</p>
       </div>
       {/* <div className="progress-input-container">
         <label>
