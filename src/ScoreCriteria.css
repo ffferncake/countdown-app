@@ -72,7 +72,7 @@
 }
 
 .criteria-noted {
-  font-size: 0.9em;
+  font-size: 0.7em;
   color: gray;
   margin-top: 4px;
 }
@@ -85,3 +85,10 @@
   border-color: transparent;
   width: 100%;
 }
+
+@media (max-width: 480px) {
+    .score-criteria-container {
+      padding: 10px;
+    }
+  }
+  
