@@ -15,35 +15,8 @@
   gap: 10px;
 }
 
-.score-criteria-row {
-  display: flex;
-  align-items: center;
-}
-
-.score-criteria-icon {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.score-criteria-text {
-  flex: 1;
-  padding-left: 10px;
-  border-left: 2px solid #ddd;
-}
-
-.score-criteria-score {
-  font-weight: bold;
-  color: hsl(0, 0%, 0%);
-}
-
 .score-criteria-desc {
   color: darkred;
-}
-
-.score-grid {
-  display: flex;
-  justify-content: space-between;
 }
 
 .positive-scores {
@@ -64,6 +37,12 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.criteria-header-wrap {
+  display: flex;
+  align-items: center;
 }
 
 .icon {
@@ -79,10 +58,30 @@
   font-weight: bold;
 }
 
+.text-noted-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .positive {
   background-color: #c6f6c6; /* Slightly darker green for positive items */
 }
 
 .negative {
   background-color: #f6c6c6; /* Slightly darker red for negative items */
+}
+
+.criteria-noted {
+  font-size: 0.9em;
+  color: gray;
+  margin-top: 4px;
+}
+
+.goBackPageBtn {
+  font-size: 15px;
+  background-color: darkgrey;
+  color: #f0f8ff;
+  border-radius: 4px;
+  border-color: transparent;
+  width: 100%;
 }
