@@ -249,8 +249,8 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : 2500 점</p>
-        <p className="score-date">updated : 2024.11.28</p>
+        <p className="score-heading">현재 점수 : 3000 점</p>
+        <p className="score-date">updated : 2024.11.29 (+500점 어제 행사 있는데 술 안 먹어서)</p>
       </div>
       {/* <div className="progress-input-container">
         <label>
