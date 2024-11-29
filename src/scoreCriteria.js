@@ -55,6 +55,8 @@ const ScoreCriteria = () => {
     { icon: "😿", text: "울게 해주면", score: "-2000점" },
     { icon: "📝", text: "썸원 안하면", score: "-500점" },
     { icon: "👩‍💻", text: "퍼니 썸원 안하면", score: "+250점" },
+    { icon: "🍻", text: "행사 끝나고 술 먹으면", score: "-1000점" },
+    { icon: "🧋", text: "행사 끝나고 술 안 먹으면", score: "+500점" },
     { icon: "🆘", text: "마지막 바람피면", score: "✂️" },
   ];
   const navigate = useNavigate();

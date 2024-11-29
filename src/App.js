@@ -43,8 +43,7 @@ function App() {
   // `;
 
   const noticeMessage = `
-  병경/추가 사항 있습니다!
-  확인바람!
+  병경/추가 사항 3개 있습니다.
   불만 있으시면 연락주세요!
   `;
 
@@ -249,8 +248,8 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : 3000 점</p>
-        <p className="score-date">updated : 2024.11.29 (+500점 어제 행사 있는데 술 안 먹어서)</p>
+        <p className="score-heading">현재 점수 : 2700 점</p>
+        <p className="score-date">updated : 2024.11.29 (-300점 띠껍게해서)</p>
       </div>
       {/* <div className="progress-input-container">
         <label>
