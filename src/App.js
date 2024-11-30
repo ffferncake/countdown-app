@@ -256,11 +256,12 @@ function App() {
           <img
             key={i}
             src={`/${i + 1}.png`}
-            alt={`Image ${i + 1}`}
+            alt={`Slide ${i + 1}`}
             className="slider-image"
           />
         ))}
       </div>
+
       {/* <div className="progress-input-container">
         <label>
           Set Progress:
