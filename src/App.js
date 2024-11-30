@@ -8,7 +8,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({
     top: "20%",
-    left: "20%",
+    left: "20%"
   });
   const [moveCount, setMoveCount] = useState(0);
   const [modalText, setModalText] = useState("오늘");
@@ -19,7 +19,7 @@ function App() {
     "바쁘니까",
     "힘내구",
     "화이팅!!!",
-    "저녁도 잘 놀구!!",
+    "저녁도 잘 놀구!!"
   ];
 
   // const noticeMessage = `
@@ -38,7 +38,7 @@ function App() {
   // - 📵 술 먹을 때 전화/카톡 잘 안 하면 (1시간 넘게 답장/응답 없으면): -2000점
   // - 🤷‍♀️ 술 먹을 때 옆에 여자가 있으면: -500점
   // - 🆘 마지막 바람피면: ✂️
-  // ❗️🔞 나머지 상황에 따라 +/- 적용 🚫 아님 "RESET" 
+  // ❗️🔞 나머지 상황에 따라 +/- 적용 🚫 아님 "RESET"
   // 점수기준 만든사람 기분따라서 점수 변경가능합니다. 이상!
   // `;
 
@@ -190,7 +190,7 @@ function App() {
           className="modal"
           style={{
             top: modalPosition.top,
-            left: modalPosition.left,
+            left: modalPosition.left
           }}
         >
           <button onClick={handleCloseModal} className="closeModal">
@@ -248,8 +248,18 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : 2700 점</p>
-        <p className="score-date">updated : 2024.11.29 (-300점 띠껍게해서)</p>
+        <p className="score-heading">현재 점수 : 4000 점</p>
+        <p className="score-date">updated : 2024.11.30</p>
+      </div>
+      <div className="slider">
+        {Array.from({ length: 10 }, (_, i) => (
+          <img
+            key={i}
+            src={`/${i + 1}.png`}
+            alt={`Image ${i + 1}`}
+            className="slider-image"
+          />
+        ))}
       </div>
       {/* <div className="progress-input-container">
         <label>
