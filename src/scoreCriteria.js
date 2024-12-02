@@ -28,7 +28,6 @@ const ScoreCriteria = () => {
     { icon: "🍲", text: "요리해주면 ", score: "+200점" },
     { icon: "🥰", text: "기분 좋게 해주면 ", score: "+200점" },
     { icon: "🛵", text: "태워주면 ", score: "+500점" },
-    { icon: "❗️🔞", text: "나머지 상황에 따라", score: "+/- 적용" },
     { icon: "📆", text: "약속 까먹으면 ", score: "-5000점" },
     { icon: "❤️‍🔥", text: "기념일 까먹으면 ", score: "-10000점" },
     { icon: "🗣️", text: "내가 말하는거 까먹으면", score: "-500점" },
@@ -52,12 +51,12 @@ const ScoreCriteria = () => {
       noted: "(1시간 넘게 답장/응답 없으면)",
     },
     { icon: "🤷‍♀️", text: "술 먹을 때 옆에 여자가 있으면", score: "-1000점" },
-    { icon: "😿", text: "울게 해주면", score: "-2000점" },
     { icon: "📝", text: "썸원 안하면", score: "-500점" },
     { icon: "👩‍💻", text: "퍼니 썸원 안하면", score: "+250점" },
     { icon: "🍻", text: "행사 끝나고 술 먹으면", score: "-1000점" },
     { icon: "🧋", text: "행사 끝나고 술 안 먹으면", score: "+500점" },
     { icon: "🆘", text: "마지막 바람피면", score: "✂️" },
+    { icon: "❗️🔞", text: "나머지 상황에 따라", score: "+/- 적용" },
   ];
   const navigate = useNavigate();
 
