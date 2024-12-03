@@ -286,6 +286,7 @@ button:focus {
 .score-wrap {
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .scorePageBtn{
