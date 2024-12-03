@@ -8,7 +8,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({
     top: "20%",
-    left: "20%",
+    left: "20%"
   });
   const [moveCount, setMoveCount] = useState(0);
   const [modalText, setModalText] = useState("오늘");
@@ -19,7 +19,7 @@ function App() {
     "바쁘니까",
     "힘내구",
     "화이팅!!!",
-    "저녁도 잘 놀구!!",
+    "저녁도 잘 놀구!!"
   ];
 
   // const noticeMessage = `
@@ -43,7 +43,8 @@ function App() {
   // `;
 
   const noticeMessage = `
-  점수 서비스 종료
+  병경/추가 사항 3개 있습니다.
+  불만 있으시면 연락주세요!
   `;
 
   const navigate = useNavigate();
@@ -161,9 +162,9 @@ function App() {
   return (
     <div className="App">
       <h1>카운트다운 타이머</h1>
-      {/* <button className="scorePageBtn" onClick={handleButtonClick}>
+      <button className="scorePageBtn" onClick={handleButtonClick}>
         점수 기준 상세 보기
-      </button> */}
+      </button>
       <input
         type="datetime-local"
         value={inputTime}
@@ -189,7 +190,7 @@ function App() {
           className="modal"
           style={{
             top: modalPosition.top,
-            left: modalPosition.left,
+            left: modalPosition.left
           }}
         >
           <button onClick={handleCloseModal} className="closeModal">
@@ -247,9 +248,8 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : -</p>
-        {/* <p className="score-heading">현재 점수 : -800 점</p>
-        <p className="score-date">updated : 2024.12.03 (-500점 항상 서울올때 말안해줘서 항상 당일 말해)</p> */}
+        <p className="score-heading">현재 점수 : -1000 점</p>
+        <p className="score-date">updated : 2024.12.03 (-500점 항상 서울올때 말안해줘서 항상 당일 말해)</p>
       </div>
       <div className="slider">
         {Array.from({ length: 10 }, (_, i) => (
