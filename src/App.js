@@ -43,8 +43,7 @@ function App() {
   // `;
 
   const noticeMessage = `
-  병경/추가 사항 3개 있습니다.
-  불만 있으시면 연락주세요!
+  점수 서비스 종료
   `;
 
   const navigate = useNavigate();
@@ -162,9 +161,9 @@ function App() {
   return (
     <div className="App">
       <h1>카운트다운 타이머</h1>
-      <button className="scorePageBtn" onClick={handleButtonClick}>
+      {/* <button className="scorePageBtn" onClick={handleButtonClick}>
         점수 기준 상세 보기
-      </button>
+      </button> */}
       <input
         type="datetime-local"
         value={inputTime}
