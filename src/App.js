@@ -43,8 +43,7 @@ function App() {
   // `;
 
   const noticeMessage = `
-  병경/추가 사항 3개 있습니다.
-  불만 있으시면 연락주세요!
+  점수 업데이트 했습니다!
   `;
 
   const navigate = useNavigate();
@@ -248,8 +247,8 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : -1000 점</p>
-        <p className="score-date">updated : 2024.12.03 (-500점 항상 서울올때 말안해줘서 항상 당일 말해)</p>
+        <p className="score-heading">현재 점수 : 1000 점</p>
+        <p className="score-date">updated : 2024.12.05 (+500점 출근날 점심 처음 같이 먹기)</p>
       </div>
       <div className="slider">
         {Array.from({ length: 10 }, (_, i) => (

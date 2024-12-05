@@ -107,6 +107,7 @@ const ScoreCriteria = () => {
         {" "}
         🎀 1만: 내가 학교앞에 찾으러 가기 🎫 1.5만:소원 쿠픈 (🍕 먹고싶은거,
         📍가고싶은데 등등) 🧗‍♂️ 2만점: 등산 쿠픈
+        🎽🏃🥇 5만점: 마라톤 쿠픈
       </p>
       <p className="score-criteria-desc">
         <strong>
