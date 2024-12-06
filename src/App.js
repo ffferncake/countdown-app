@@ -247,8 +247,8 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : 1000 점</p>
-        <p className="score-date">updated : 2024.12.05 (+500점 출근날 점심 처음 같이 먹기)</p>
+        <p className="score-heading">현재 점수 : 1500 점</p>
+        <p className="score-date">updated : 2024.12.06 (+500점 쥬토피아)</p>
       </div>
       <div className="slider">
         {Array.from({ length: 10 }, (_, i) => (
