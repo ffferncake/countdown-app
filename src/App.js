@@ -43,7 +43,7 @@ function App() {
   // `;
 
   const noticeMessage = `
-  점수 업데이트 했습니다!
+  한국어능력시험 5급 받으면 여수 벚꽃 보러 가기
   `;
 
   const navigate = useNavigate();
@@ -206,7 +206,7 @@ function App() {
           <div className="notice-modal-wrap">
             <div className="notice-content">
               <p className="notice-title">
-                공지 사항 : 점수 기준 (2024.11.28 기준)
+                약속 공지
               </p>
               {noticeMessage.split("\n").map((line, index) => {
                 const [boldText, regularText] = line.split(":");
