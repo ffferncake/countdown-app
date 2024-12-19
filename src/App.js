@@ -8,7 +8,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const [modalPosition, setModalPosition] = useState({
     top: "20%",
-    left: "20%"
+    left: "20%",
   });
   const [moveCount, setMoveCount] = useState(0);
   const [modalText, setModalText] = useState("오늘");
@@ -19,7 +19,7 @@ function App() {
     "바쁘니까",
     "힘내구",
     "화이팅!!!",
-    "저녁도 잘 놀구!!"
+    "저녁도 잘 놀구!!",
   ];
 
   // const noticeMessage = `
@@ -189,7 +189,7 @@ function App() {
           className="modal"
           style={{
             top: modalPosition.top,
-            left: modalPosition.left
+            left: modalPosition.left,
           }}
         >
           <button onClick={handleCloseModal} className="closeModal">
@@ -205,9 +205,7 @@ function App() {
         <div className="notice-modal">
           <div className="notice-modal-wrap">
             <div className="notice-content">
-              <p className="notice-title">
-                약속 공지
-              </p>
+              <p className="notice-title">약속 공지</p>
               {noticeMessage.split("\n").map((line, index) => {
                 const [boldText, regularText] = line.split(":");
                 return (
@@ -247,8 +245,8 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : 7500 점</p>
-        <p className="score-date">updated : 2024.12.16</p>
+        <p className="score-heading">현재 점수 : 8750 점</p>
+        <p className="score-date">updated : 2024.12.19</p>
       </div>
       <div className="slider">
         {Array.from({ length: 10 }, (_, i) => (
