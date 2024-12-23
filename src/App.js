@@ -245,8 +245,8 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : 10150 점</p>
-        <p className="score-date">updated : 2024.12.23</p>
+        <p className="score-heading">현재 점수 : 10650 점</p>
+        <p className="score-date">updated : 2024.12.23 🤫</p>
       </div>
       <div className="slider">
         {Array.from({ length: 10 }, (_, i) => (
