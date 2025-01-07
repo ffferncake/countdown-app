@@ -51,7 +51,7 @@ const ScoreCriteria = () => {
       noted: "(1시간 넘게 답장/응답 없으면)",
     },
     { icon: "🤷‍♀️", text: "술 먹을 때 옆에 여자가 있으면", score: "-1000점" },
-    { icon: "📝", text: "썸원 안하면", score: "-500점" },
+    { icon: "📝", text: "썸원 안하면", score: "-250점" },
     { icon: "👩‍💻", text: "퍼니 썸원 안하면", score: "+250점" },
     { icon: "🍻", text: "행사 끝나고 술 먹으면", score: "-1000점" },
     { icon: "🧋", text: "행사 끝나고 술 안 먹으면", score: "+500점" },
