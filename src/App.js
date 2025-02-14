@@ -245,8 +245,10 @@ function App() {
         )}
       </div>
       <div className="score-wrap">
-        <p className="score-heading">현재 점수 : 20450 점</p>
-        <p className="score-date">updated : 2025.02.07</p>
+        <p className="score-heading">현재 점수 : 23950 점</p>
+        <p className="score-date">updated : 2025.02.14 </p>
+          <p className="score-date">평일날 500x5 = 2500 특별한 점수 + 1000</p>
+
       </div>
       <div className="slider">
         {Array.from({ length: 10 }, (_, i) => (
