@@ -246,7 +246,7 @@ function App() {
       </div>
       <div className="score-wrap">
         <p className="score-heading">현재 점수 : 21450 점</p>
-        <p className="score-date">updated : 2025.02.25 </p>
+        <p className="score-date">updated : 2025.04.17 </p>
           <p className="score-date"></p>
 
       </div>
